@@ -19,12 +19,12 @@ const app = express();
 
 // db
 mongoose
-    .connect(process.env.DATABASE, {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useUnifiedTopology: true
-    })
-    .then(() => console.log("DB Connected"));
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("DB Connected"));
 
 // middlewares
 app.use(morgan("dev"));
@@ -44,5 +44,5 @@ app.use("/api", orderRoutes);
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
